@@ -1,6 +1,9 @@
 <?php
 namespace App\Mail;
 
+/**
+ *　メールの設定情報
+ */
 class Component
 {
     public string $fromEmail;

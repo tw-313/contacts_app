@@ -10,6 +10,9 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 
+/**
+ * メール送信の共通クラス
+ */
 class SendMail extends Mailable
 {
     /**
@@ -27,6 +30,11 @@ class SendMail extends Mailable
         $this->component = $component;
     }
 
+    /**
+     * メールの共通処理
+     * @param string $toEmail
+     * @return void
+     */
     public function sendOne(string $toEmail)
     {
         Mail::raw(
