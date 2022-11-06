@@ -13,24 +13,24 @@ class ContactsController
     /**
      * コンタクトサービスクラス
      */
-    private ContactsService $ContactsService;
+    private ContactsService $contactsService;
 
     /**
      * コンストラクタ
      */
     public function __construct(
-        ContactsService $ContactsService,
+        ContactsService $contactsService,
     )
     {
-        $this->ContactsService = $ContactsService;
+        $this->ContactsService = $contactsService;
     }
-    
+
     /**
      * コンタクトページを表示する
      * return view
     **/
     public function show()
     {
-        return view('Contacts/contacts');
+        return view('Contacts/contacts')->with('binder');
     }
 }
